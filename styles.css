@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 body,html{
+    height: 100%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: medium;
     background-color: #121212;
@@ -26,7 +27,7 @@ main,section{
     border-radius: 12px;
     padding: 12px;
 }
-.section{
+section{
     padding: 12px;
     display: flex;
     flex-direction: column;
@@ -36,8 +37,8 @@ main,section{
 display: grid;
 border: 2px solid #2A2A2A;
 flex-grow: 1;
-grid-template-columns: repeat(auto-fill,30px);
-grid-template-rows: repeat(auto-fill,30px);
+grid-template-columns: repeat(auto-fill,minmax(30px,1fr));
+grid-template-rows: repeat(auto-fill,minmax(30px,1fr));
 }
 .bl{
     width: 30px;
