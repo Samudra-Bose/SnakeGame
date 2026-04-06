@@ -15,12 +15,22 @@ const height= 60;
  }
  snake=[{
 x:1,y:8
-},{
-x:1,y:9
-    },{ 
-x:1,y:10
- }];
- let direction ="left";
+},];
+let direction ="down";
+window.addEventListener("keydown",(e)=>{
+    if(e.key==="ArrowUp"){
+direction="up";
+}
+else if(e.key==="ArrowDown"){
+    direction="down";
+    }
+else if(e.key==="ArrowRight"){
+    direction="right";
+    }
+else if(e.key==="ArrowLeft"){
+    direction="left";
+    }
+})
 
 function filling(){
     snake.forEach(part=>{
@@ -29,13 +39,25 @@ function filling(){
 }
 setInterval(()=>{
     let head=null;
+
     if(direction==="left"){
         head= {x:snake[0].x,y:snake[0].y-1};
     }
+    else if(direction==="right"){
+        head= {x:snake[0].x,y:snake[0].y+1};
+    }
+    else if(direction==="up"){
+        head= {x:snake[0].x-1,y:snake[0].y};
+    }
+    else if(direction==="down"){
+        head= {x:snake[0].x+1,y:snake[0].y};
+    }
+
     snake.forEach(part=>{
         blocks[`${part.x}-${part.y}`].classList.remove("snakebody");
     });
+
     snake.unshift(head);
     snake.pop();
     filling();
-},500);
+},300);
