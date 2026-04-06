@@ -7,7 +7,7 @@ const height= 60;
  snake=[{
 x:1,y:8
 },];
-let food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)}
+let food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)};
 let direction ="right";
 
 
@@ -40,8 +40,8 @@ else if(e.key==="ArrowLeft"){
 function filling(){
     let head=null;
     blocks[`${food.x}-${food.y}`].classList.add("foodcolor");
-
-
+    
+    
     if(direction==="left"){
         head= {x:snake[0].x,y:snake[0].y-1};
     }
@@ -54,14 +54,20 @@ function filling(){
     else if(direction==="down"){
         head= {x:snake[0].x+1,y:snake[0].y};
     }
-
-
-if(head.x<0 || head.x>rows || head.y<0|| head.y>=cols){
-    alert("Game Over");
-    clearInterval(intervalID);
-}
-
-
+    
+    
+    if(head.x<0 || head.x>rows || head.y<0|| head.y>=cols){
+        alert("Game Over");
+        // clearInterval(intervalID);
+    }
+    
+    if(head.x===food.x && head.y===food.y){
+        blocks[`${food.x}-${food.y}`].classList.remove("foodcolor");
+        food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)};
+        blocks[`${food.x}-${food.y}`].classList.add("foodcolor");
+        snake.unshift(food);
+    }
+    
     snake.forEach(part=>{
         blocks[`${part.x}-${part.y}`].classList.remove("snakebody");
     });
