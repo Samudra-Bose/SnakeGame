@@ -45,3 +45,6 @@ grid-template-rows: repeat(auto-fill,minmax(60px,1fr));
     height: 60px;
     border: 1px solid #2A2A2A;
 }
+.snakebody{
+    background-color: aliceblue;
+}

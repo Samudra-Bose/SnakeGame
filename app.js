@@ -9,6 +9,8 @@ const height= 60;
     block.classList.add("bl");
     board.appendChild(block);
     block.innerText=`${i}-${j}`;
+    let blocks;
+    blocks[`${i}-${j}`];
      }
  }
  snake=[{
@@ -18,4 +20,9 @@ x:1,y:9
     },{ 
 x:1,y:10
  }];
- 
+
+function filling(){
+    snake.forEach(part=>{
+        blocks[`${part.x}-${part.y}`].classList.add("snakebody");
+    })
+}
