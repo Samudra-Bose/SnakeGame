@@ -8,9 +8,9 @@ const height= 60;
 x:1,y:8
 },];
 let food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)}
+let direction ="right";
 
 
-let direction ="down";
 window.addEventListener("keydown",(e)=>{
     if(e.key==="ArrowUp"){
 direction="up";
@@ -38,11 +38,8 @@ else if(e.key==="ArrowLeft"){
 
 
 function filling(){
-
-    
-    blocks[`${food.x}-${food.y}`].classList.add("foodcolor");
     let head=null;
-
+    blocks[`${food.x}-${food.y}`].classList.add("foodcolor");
 
 
     if(direction==="left"){
@@ -58,6 +55,11 @@ function filling(){
         head= {x:snake[0].x+1,y:snake[0].y};
     }
 
+
+if(head.x<0 || head.x>rows || head.y<0|| head.y>=cols){
+    alert("Game Over");
+    clearInterval(intervalID);
+}
 
 
     snake.forEach(part=>{
