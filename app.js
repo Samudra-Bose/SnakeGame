@@ -1,6 +1,6 @@
 let board=document.querySelector(".board");
-const width=  50;
-const height= 50;
+const width=  60;
+const height= 60;
  let cols=Math.floor(board.clientWidth/width);
  let rows=Math.floor(board.clientHeight/height);
  for(let i=0;i<rows;i++){
@@ -11,4 +11,11 @@ const height= 50;
     block.innerText=`${i}-${j}`;
      }
  }
+ snake=[{
+x:1,y:8
+},{
+x:1,y:9
+    },{ 
+x:1,y:10
+ }];
  
