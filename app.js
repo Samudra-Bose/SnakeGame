@@ -11,30 +11,16 @@ let food={x:Math.floor(Math.random()*rows),y:Math.floor(Math.random()*cols)};
 let direction ="right";
 
 
-window.addEventListener("keydown",(e)=>{
-    if(e.key==="ArrowUp"){
-direction="up";
-}
-else if(e.key==="ArrowDown"){
-    direction="down";
-    }
-else if(e.key==="ArrowRight"){
-    direction="right";
-    }
-else if(e.key==="ArrowLeft"){
-    direction="left";
-    }
-})
 
- for(let i=0;i<rows;i++){
-     for(let j=0;j<cols;j++){
-    const block=document.createElement("div");
-    block.classList.add("bl");
-    board.appendChild(block);
-    block.innerText=`${i}-${j}`;
-    blocks[`${i}-${j}`]=block;
-     }
- }
+for(let i=0;i<rows;i++){
+    for(let j=0;j<cols;j++){
+        const block=document.createElement("div");
+        block.classList.add("bl");
+        board.appendChild(block);
+        block.innerText=`${i}-${j}`;
+        blocks[`${i}-${j}`]=block;
+    }
+}
 
 
 function filling(){
@@ -71,7 +57,7 @@ function filling(){
     snake.forEach(part=>{
         blocks[`${part.x}-${part.y}`].classList.remove("snakebody");
     });
-
+    
     snake.unshift(head);
     snake.pop();
     snake.forEach(part=>{
@@ -82,3 +68,19 @@ let intervalID=setInterval(()=>{
     
     filling();
 },300);
+
+
+window.addEventListener("keydown",(e)=>{
+    if(e.key==="ArrowUp"){
+direction="up";
+}
+else if(e.key==="ArrowDown"){
+    direction="down";
+    }
+else if(e.key==="ArrowRight"){
+    direction="right";
+    }
+else if(e.key==="ArrowLeft"){
+    direction="left";
+    }
+})
