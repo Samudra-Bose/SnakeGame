@@ -58,4 +58,26 @@ grid-template-rows: repeat(auto-fill,minmax(60px,1fr));
     top: 0;
     background-color: #35353587;
     backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start-btn{
+    height: 60%;
+    width: 75%;
+    gap: 18px;
+    border-radius: 17px;
+    padding: 8px;
+    transition: transform 0.17s ease-in;
+}
+.start-btn:hover{
+    transform: scale(1.16);
+}
+.startMenu div h3{
+    margin-bottom: 8px;
+}
+.startMenu div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

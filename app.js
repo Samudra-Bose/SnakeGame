@@ -1,4 +1,6 @@
 let board=document.querySelector(".board");
+let startbutton=document.querySelector(".start-btn");
+let startmenu=document.querySelector(".startMenu");
 const width=  60;
 const height= 60;
  let cols=Math.floor(board.clientWidth/width);
@@ -64,23 +66,25 @@ function filling(){
         blocks[`${part.x}-${part.y}`].classList.add("snakebody");
     })
 }
-let intervalID=setInterval(()=>{
-    
-    filling();
-},300);
 
 
 window.addEventListener("keydown",(e)=>{
     if(e.key==="ArrowUp"){
-direction="up";
-}
-else if(e.key==="ArrowDown"){
-    direction="down";
+        direction="up";
     }
-else if(e.key==="ArrowRight"){
-    direction="right";
+    else if(e.key==="ArrowDown"){
+        direction="down";
     }
-else if(e.key==="ArrowLeft"){
-    direction="left";
+    else if(e.key==="ArrowRight"){
+        direction="right";
     }
+    else if(e.key==="ArrowLeft"){
+        direction="left";
+    }
+})
+startbutton.addEventListener("click",(e)=>{
+    startmenu.style.display="none"
+    let intervalID=setInterval(()=>{
+        filling();
+    },300);
 })
