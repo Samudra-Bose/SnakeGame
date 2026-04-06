@@ -33,7 +33,9 @@ setInterval(()=>{
         head= {x:snake[0].x,y:snake[0].y-1};
     }
     snake.forEach(part=>{
-        blocks[`${part.x}-${part.y}`].classList.add("snakebody");
+        blocks[`${part.x}-${part.y}`].classList.remove("snakebody");
     });
+    snake.unshift(head);
+    snake.pop();
     filling();
 },500);
