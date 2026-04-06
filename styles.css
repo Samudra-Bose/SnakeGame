@@ -48,3 +48,6 @@ grid-template-rows: repeat(auto-fill,minmax(60px,1fr));
 .snakebody{
     background-color: aliceblue;
 }
+.foodcolor{
+    background-color:indianred;
+}
