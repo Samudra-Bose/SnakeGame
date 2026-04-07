@@ -37,12 +37,12 @@ section{
 display: grid;
 border: 2px solid #2A2A2A;
 flex-grow: 1;
-grid-template-columns: repeat(auto-fill,minmax(60px,1fr));
-grid-template-rows: repeat(auto-fill,minmax(60px,1fr));
+grid-template-columns: repeat(auto-fill,minmax(25px,1fr));
+grid-template-rows: repeat(auto-fill,minmax(25px,1fr));
 }
 .bl{
-    width: 60px;
-    height: 60px;
+    width: 25px;
+    height: 25px;
     border: 1px solid #2A2A2A;
 }
 .snakebody{
