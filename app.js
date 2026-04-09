@@ -81,19 +81,19 @@ function filling() {
 
 
 window.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowUp") {
+    if (e.key === "ArrowUp" && direction!="down") {
         direction = "up";
     }
-    else if (e.key === "ArrowDown") {
+    else if (e.key === "ArrowDown" && direction!="up") {
         direction = "down";
     }
-    else if (e.key === "ArrowRight") {
+    else if (e.key === "ArrowRight" && direction!="left") {
         direction = "right";
     }
-    else if (e.key === "ArrowLeft") {
+    else if (e.key === "ArrowLeft" && direction!="right") {
         direction = "left";
     }
-})
+});
 startbutton.addEventListener("click", (e) => {
     startmenu.style.display = "none";
     restartmenu.style.display="flex";
@@ -105,10 +105,10 @@ startbutton.addEventListener("click", (e) => {
 
 
 // Game Over 
-// restartbutton.addEventListener("click",(e)=>{
-//     restartmenu.style.display="none";
-//     let intervalID = setInterval(() => {
-//         filling();
-//     }, 200);
+restartbutton.addEventListener("click",(e)=>{
+    restartmenu.style.display="none";
+    let intervalID = setInterval(() => {
+        filling();
+    }, 200);
 
-// })
+})
