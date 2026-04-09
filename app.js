@@ -15,13 +15,13 @@ let direction = "right";
 
 
 // random direction
-setInterval(() => {
-    let r = Math.floor(Math.random() * 10)
-    if (r > 0 && r <= 3) direction = "right";
-    else if (r > 3 && r <= 5) direction = "up";
-    else if (r > 5 && r <= 7) direction = "left";
-    else if (r > 7 && r <= 10) direction = "down";
-}, 0.0010);
+// setInterval(() => {
+//     let r = Math.floor(Math.random() * 10)
+//     if (r > 0 && r <= 3) direction = "right";
+//     else if (r > 3 && r <= 5) direction = "up";
+//     else if (r > 5 && r <= 7) direction = "left";
+//     else if (r > 7 && r <= 10) direction = "down";
+// }, 0.0010);
 
 
 for (let i = 0; i < rows; i++) {
@@ -53,7 +53,7 @@ function filling() {
         head = { x: snake[0].x + 1, y: snake[0].y };
     }
 
-    // || head.x>=rows || head.y<0|| head.y>=cols
+    
     if (head.x < 0) head.x = rows - 1;
     else if (head.x >= rows) head.x = 0
     else if (head.y < 0) head.y = cols - 1;
@@ -96,5 +96,13 @@ startbutton.addEventListener("click", (e) => {
     startmenu.style.display = "none"
     let intervalID = setInterval(() => {
         filling();
-    }, 0.0001);
+    }, 200);
+})
+
+
+
+// Game Over 
+let hello;
+hello.addEventListener("click",(e)=>{
+
 })
