@@ -1,6 +1,8 @@
 let board = document.querySelector(".board");
 let startbutton = document.querySelector(".start-btn");
-let startmenu = document.querySelector(".startMenu");
+let restartbutton = document.querySelector(".restart-btn");
+let startmenu = document.querySelector(".startmenu");
+let restartmenu=document.querySelector(".restartmenu");
 const width = 25;
 const height = 25;
 let cols = Math.floor(board.clientWidth / width);
@@ -93,7 +95,8 @@ window.addEventListener("keydown", (e) => {
     }
 })
 startbutton.addEventListener("click", (e) => {
-    startmenu.style.display = "none"
+    startmenu.style.display = "none";
+    restartmenu.style.display="flex";
     let intervalID = setInterval(() => {
         filling();
     }, 200);
@@ -102,7 +105,10 @@ startbutton.addEventListener("click", (e) => {
 
 
 // Game Over 
-let hello;
-hello.addEventListener("click",(e)=>{
+// restartbutton.addEventListener("click",(e)=>{
+//     restartmenu.style.display="none";
+//     let intervalID = setInterval(() => {
+//         filling();
+//     }, 200);
 
-})
+// })

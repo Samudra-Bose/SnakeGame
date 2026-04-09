@@ -51,7 +51,7 @@ grid-template-rows: repeat(auto-fill,minmax(25px,1fr));
 .foodcolor{
     background-color:indianred;
 }
-.startMenu{
+.startmenu{
     height: 100vh;
     width:100vw;
     position: fixed;
@@ -73,15 +73,15 @@ grid-template-rows: repeat(auto-fill,minmax(25px,1fr));
 .start-btn:hover{
     transform: scale(1.16);
 }
-.startMenu div h3{
+.startmenu div h3{
     margin-bottom: 8px;
 }
-.startMenu div{
+.startmenu div{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.restartMenu{
+.restartmenu{
     height: 100vh;
     width:100vw;
     position: fixed;
@@ -94,7 +94,7 @@ grid-template-rows: repeat(auto-fill,minmax(25px,1fr));
 }
 .restart-btn{
     height: 60%;
-    width: 75%;
+    width: 95%;
     gap: 18px;
     border-radius: 17px;
     padding: 8px;
@@ -103,10 +103,10 @@ grid-template-rows: repeat(auto-fill,minmax(25px,1fr));
 .restart-btn:hover{
     transform: scale(1.16);
 }
-.restartMenu div h3{
+.restartmenu div h3{
     margin-bottom: 8px;
 }
-.restartMenu div{
+.restartmenu div{
     display: flex;
     flex-direction: column;
     align-items: center;
