@@ -37,6 +37,8 @@ for (let i = 0; i < rows; i++) {
 }
 
 
+
+
 function filling() {
     let head = null;
     blocks[`${food.x}-${food.y}`].classList.add("foodcolor");
